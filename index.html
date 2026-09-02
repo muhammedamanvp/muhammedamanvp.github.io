@@ -493,12 +493,10 @@ h1 span {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(100%) contrast(110%);
-  transition: filter 0.6s ease, transform 0.6s ease;
+  transition: transform 0.6s ease;
 }
 
 .outer-frame:hover .portrait-box img {
-  filter: grayscale(0%) contrast(100%);
   transform: scale(1.03);
 }
 
@@ -979,7 +977,7 @@ footer {
 <nav>
   <div class="container nav-inner">
     <a class="logo" href="#">
-      <span>AMAN</span> · 1925
+      <span>AMAN</span>
     </a>
     
     <div class="nav-links">
