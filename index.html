@@ -722,7 +722,7 @@ h2 span {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .project-tile {
@@ -735,10 +735,74 @@ h2 span {
   position: relative;
 }
 
+.p-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.p-features li {
+  font-size: 13px;
+  color: var(--fg-champagne);
+  line-height: 1.55;
+  position: relative;
+  padding-left: 18px;
+}
+
+.p-features li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent-gold);
+  font-size: 10px;
+}
+
 .project-tile:hover {
   border-color: var(--accent-gold);
   box-shadow: var(--glow-gold-md);
   transform: translateY(-6px);
+}
+
+.project-tile.featured {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.06) 0%, var(--bg-charcoal) 100%);
+  border: 1px solid var(--border-gold-medium);
+  box-shadow: var(--glow-gold-sm);
+  padding: 32px 28px;
+}
+
+.project-tile.featured:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--glow-gold-lg);
+  transform: translateY(-6px);
+}
+
+.featured-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 18px 0 22px;
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border-gold-subtle);
+}
+
+.kpi-stat-cell span {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-muted);
+}
+
+.kpi-stat-cell strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  color: var(--accent-gold);
+  letter-spacing: 0.02em;
+  margin-top: 3px;
 }
 
 .p-header {
@@ -952,7 +1016,7 @@ footer {
 /* Responsive Media Queries */
 @media (max-width: 980px) {
   .hero-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .mobile-toggle { display: block; }
   .section-head { display: block; }
@@ -1063,11 +1127,11 @@ footer {
         <div class="portrait-stats-bar">
           <div class="p-stat-item">
             <span>DISCIPLINE</span>
-            <strong>POWER BI · SQL</strong>
+            <strong>POWER BI · FINANCIAL ANALYTICS</strong>
           </div>
           <div class="p-stat-item" style="text-align: right;">
-            <span>DATA PROCESSED</span>
-            <strong>20,000+ RECORDS</strong>
+            <span>PORTFOLIO VOLUME</span>
+            <strong>215M+ VOLUME ANALYZED</strong>
           </div>
         </div>
       </div>
@@ -1144,26 +1208,57 @@ footer {
         <span class="roman-kicker">III. CURATED PORTFOLIO</span>
         <h2>SELECTED ANALYTICS <span>EXHIBITS.</span></h2>
       </div>
-      <p class="section-intro">A selection of technical analytics work covering business intelligence, customer cohort analysis, and database architecture.</p>
+      <p class="section-intro">A specialized corporate FP&amp;A and financial analytics trilogy built with Power BI &amp; DAX—spanning executive hospitality yield, cross-border scenario modeling, and property cost structure optimization.</p>
     </div>
 
     <div class="projects-grid">
-      <!-- Project I -->
-      <article class="project-tile deco-corners">
+      <!-- Exhibit I: Hospitality & Manager Yield Analytics -->
+      <article class="project-tile deco-corners featured">
         <div class="p-header">
-          <span class="p-roman">EXHIBIT I</span>
+          <div>
+            <span class="p-roman">EXHIBIT I · HOSPITALITY FP&amp;A</span>
+          </div>
           <div class="diamond-badge">
             <span class="diamond-content">01</span>
           </div>
         </div>
-        <h3>Sales Performance Dashboard</h3>
-        <p>Interactive Power BI business dashboard analyzing monthly revenue, profit margins, product KPIs, and regional sales distribution with automated refresh schedules.</p>
+        <h3>Hospitality Financial Analytics &amp; Manager Yield Dashboard</h3>
+        <p>Engineered an executive Power BI hospitality analytics system evaluating manager yield, segment contributions, and high-value service drivers. Solved the critical operational challenge of measuring account manager performance when booking volume and transaction values tell contrasting stories.</p>
+        
+        <div class="featured-kpi-strip">
+          <div class="kpi-stat-cell">
+            <span>Room Revenue</span>
+            <strong>86.27M</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>Retail Sales</span>
+            <strong>53.35M</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>Avg Trans (ATV)</span>
+            <strong>14.50K</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>Currency</span>
+            <strong>AED / OMR</strong>
+          </div>
+        </div>
+
+        <ul class="p-features">
+          <li><strong>Quadrant Yield Analysis:</strong> Evaluated booking volume vs. Average Transaction Value (ATV) to identify high-volume vs. high-yield account managers.</li>
+          <li><strong>Segment Performance:</strong> Analyzed multi-channel revenue contributions across Food &amp; Beverage (F&amp;B), Rooms, Spa, and Luxury Retail.</li>
+          <li><strong>Top-N Service Driver Analysis:</strong> Ranked and isolated the Top 15 services by revenue to spotlight core commercial profitability drivers.</li>
+          <li><strong>Dynamic Currency Switcher:</strong> Implemented dual-currency (AED / OMR) conversion using custom DAX measures for cross-border Middle East reporting.</li>
+        </ul>
+
         <div class="p-footer">
           <div class="tags-row">
             <span class="tag-badge">Power BI</span>
-            <span class="tag-badge">Excel</span>
-            <span class="tag-badge">DAX</span>
-            <span class="tag-badge">KPIs</span>
+            <span class="tag-badge">Advanced DAX</span>
+            <span class="tag-badge">Hospitality Analytics</span>
+            <span class="tag-badge">Manager Yield</span>
+            <span class="tag-badge">Top-N Ranking</span>
+            <span class="tag-badge">Financial Modeling</span>
           </div>
           <a class="project-link-btn" href="https://github.com/muhammedamanvp" target="_blank" rel="noopener">
             VIEW ON GITHUB ↗
@@ -1171,22 +1266,53 @@ footer {
         </div>
       </article>
 
-      <!-- Project II -->
-      <article class="project-tile deco-corners">
+      <!-- Exhibit II: Regional Financial Analytics & What-If Scenario Model -->
+      <article class="project-tile deco-corners featured">
         <div class="p-header">
-          <span class="p-roman">EXHIBIT II</span>
+          <div>
+            <span class="p-roman">EXHIBIT II · REGIONAL FP&amp;A</span>
+          </div>
           <div class="diamond-badge">
             <span class="diamond-content">02</span>
           </div>
         </div>
-        <h3>Customer Segmentation Analysis</h3>
-        <p>Conducted exploratory data analysis and customer cohort clustering on purchasing records using Python, Pandas, and Matplotlib to improve targeted marketing campaigns.</p>
+        <h3>Regional Financial Analytics &amp; What-If Model</h3>
+        <p>Built an end-to-end Power BI financial analytics system analyzing 31.13M Gross Revenue vs. 24.08M OPEX across the UAE and Oman, converting complex financial transactions into decision-ready strategic insights.</p>
+        
+        <div class="featured-kpi-strip">
+          <div class="kpi-stat-cell">
+            <span>Gross Revenue</span>
+            <strong>31.13M</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>OPEX Managed</span>
+            <strong>24.08M</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>Net Profit Margin</span>
+            <strong>22.65%</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>FX Sensitivity</span>
+            <strong>What-If</strong>
+          </div>
+        </div>
+
+        <ul class="p-features">
+          <li><strong>Regional Margin Contrast:</strong> 31.13M Revenue vs. 24.08M OPEX (UAE 43.44% vs. Oman -193.24% margin).</li>
+          <li><strong>Dynamic Currency Conversion:</strong> Dual-currency switching (AED / OMR) powered by custom DAX formulas.</li>
+          <li><strong>Risk &amp; P&amp;L Breakdown:</strong> Granular tracking of Tax, Customs, Procurement, OPEX, and Accounts Receivable risk.</li>
+          <li><strong>What-If Sensitivity Model:</strong> Interactive scenario analysis testing FX rates, pricing, and cost elasticity on profit.</li>
+        </ul>
+
         <div class="p-footer">
           <div class="tags-row">
-            <span class="tag-badge">Python</span>
-            <span class="tag-badge">Pandas</span>
-            <span class="tag-badge">Matplotlib</span>
-            <span class="tag-badge">EDA</span>
+            <span class="tag-badge">Power BI</span>
+            <span class="tag-badge">Advanced DAX</span>
+            <span class="tag-badge">FP&amp;A</span>
+            <span class="tag-badge">Financial Modeling</span>
+            <span class="tag-badge">Scenario Analysis</span>
+            <span class="tag-badge">Currency FX</span>
           </div>
           <a class="project-link-btn" href="https://github.com/muhammedamanvp" target="_blank" rel="noopener">
             VIEW ON GITHUB ↗
@@ -1194,22 +1320,52 @@ footer {
         </div>
       </article>
 
-      <!-- Project III -->
-      <article class="project-tile deco-corners">
+      <!-- Exhibit III: Cost Structure & Property Profitability Analytics -->
+      <article class="project-tile deco-corners featured">
         <div class="p-header">
-          <span class="p-roman">EXHIBIT III</span>
+          <div>
+            <span class="p-roman">EXHIBIT III · COST FP&amp;A</span>
+          </div>
           <div class="diamond-badge">
             <span class="diamond-content">03</span>
           </div>
         </div>
-        <h3>Retail Database Analysis</h3>
-        <p>Designed and queried structured database schemas for inventory and customer transactions, optimizing complex SQL retrieval times and automated reporting aggregation.</p>
+        <h3>Cost Structure &amp; Property Profitability Analytics</h3>
+        <p>Built an executive Power BI financial dashboard investigating cost structures, property profitability, and supply chain procurement trends across multi-asset portfolios to uncover why high revenue does not always yield high profitability.</p>
+        
+        <div class="featured-kpi-strip">
+          <div class="kpi-stat-cell">
+            <span>OpEx Ratio</span>
+            <strong>77.35%</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>Licensing Cost</span>
+            <strong>48.92M</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>MoM Expense Incr</span>
+            <strong>+5.10%</strong>
+          </div>
+          <div class="kpi-stat-cell">
+            <span>Procurement Trend</span>
+            <strong>18-Month</strong>
+          </div>
+        </div>
+
+        <ul class="p-features">
+          <li><strong>Global OpEx Ratio Tracking:</strong> Analyzed 77.35% OpEx ratio with +5.10% MoM expenditure inflation.</li>
+          <li><strong>Asset-Level Profitability:</strong> Compared property revenue vs. OpEx to isolate high-margin from cost-heavy assets.</li>
+          <li><strong>Property Licensing Center:</strong> Evaluated single largest cost driver at 48.92M using treemap variance models.</li>
+          <li><strong>Supply Chain &amp; Customs Trends:</strong> Tracked 18-month longitudinal procurement and customs import costs.</li>
+        </ul>
         <div class="p-footer">
           <div class="tags-row">
-            <span class="tag-badge">SQL</span>
-            <span class="tag-badge">MongoDB</span>
-            <span class="tag-badge">MySQL</span>
-            <span class="tag-badge">Aggregation</span>
+            <span class="tag-badge">Power BI</span>
+            <span class="tag-badge">DAX</span>
+            <span class="tag-badge">FP&amp;A</span>
+            <span class="tag-badge">Cost Optimization</span>
+            <span class="tag-badge">Supply Chain</span>
+            <span class="tag-badge">Variance Analysis</span>
           </div>
           <a class="project-link-btn" href="https://github.com/muhammedamanvp" target="_blank" rel="noopener">
             VIEW ON GITHUB ↗
